@@ -9,13 +9,13 @@ const router = express.Router();
 mongoose.connect('mongodb://lorrann:lorrann01@ds042607.mlab.com:42607/achados-perdidos', { useMongoClient: true });
 
 //model
-const Object = require('./models/object-model');
-const User = require('./models/user-model');
+const Object = require('./models/object');
+const User = require('./models/user');
 
 //route
-const indexRoutes = require('./routes/index-route');
-const object = require('./routes/object-route');
-const user = require('./routes/user-route');
+const indexRoutes = require('./routes/index');
+const object = require('./routes/object');
+const user = require('./routes/user');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
