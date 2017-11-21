@@ -13,7 +13,6 @@ exports.get = (req, res) => {
 
 exports.post = (req, res) => {
     var user = new User(req.body);
-    //npm install bcrypt
     user.save()
         .then(x => {
             res.status(201).send({
@@ -21,7 +20,7 @@ exports.post = (req, res) => {
             });
         })
         .catch(e => {
-            res.status(400).send({
+            res.status(500).send({
                 message: 'Falha ao registrar uauário',
                 data: e
             });
